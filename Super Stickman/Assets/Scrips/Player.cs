@@ -196,7 +196,6 @@ public class Player : MonoBehaviour
     {
         if (noOfClick >= 3)
         {
-            attacking = true;
             ChangeAnimationState(_AnimationState.Attack3);
         }
         else
@@ -211,7 +210,6 @@ public class Player : MonoBehaviour
     //{
     //    if (noOfClick >= 4)
     //    {
-    //        attacking = true;
     //        ChangeAnimationState(_AnimationState.Attack4);
     //    }
     //    else
@@ -226,7 +224,6 @@ public class Player : MonoBehaviour
     {
         if (noOfClick >= 4)
         {
-            attacking = true;
             ChangeAnimationState(_AnimationState.Attack5);
         }
         else
@@ -255,6 +252,8 @@ public class Player : MonoBehaviour
     }
     public void DelayIdle()
     {
+        attacking = false;
+        rb.velocity = Vector3.zero;
         noOfClick = 0;
         NotMove = false;
         ChangeAnimationState(_AnimationState.Idle1);
@@ -339,9 +338,6 @@ public class Player : MonoBehaviour
             Vector3 directionSuperSpeed = (enemyFocus.position - _transform.position).normalized;
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.AddForce(directionSuperSpeed * superSpeed, ForceMode2D.Impulse);
-
-            //Vector3 directionSuperSpeed = (enemyFocus.position - _transform.position).normalized;
-            //rb.velocity = directionSuperSpeed * superSpeed;
 
             CreateEffectSuperSpeed();
             Invoke(nameof(EndSuperSpeed), 0.2f);
@@ -487,7 +483,6 @@ public class Player : MonoBehaviour
     {
         tam = Instantiate(effectSuperSpeed, _transform.position, _transform.rotation, _transform);
     }
-
     public void CreateEffectSkill1()
     {
         GameObject skill1 = Instantiate(effectSkill1, firePoint.position, _transform.rotation);
@@ -589,7 +584,6 @@ public class Player : MonoBehaviour
         Instantiate(effectHitSkill3, _transform.position, _transform.rotation, _transform);
         DelayBlownAway(0.3f, 0.8f);
     }
-
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;

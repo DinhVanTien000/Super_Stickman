@@ -16,7 +16,7 @@ public class EnemyControoller : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-    [SerializeField] private GameObject effectSuperSpeed, effectDieGround, effectSkill1, effectSkill2, effectSkill3
+    [SerializeField] private GameObject effectSuperSpeed, effectDieGround, effectSkill1, effectSkill2, _effectSkill2, effectSkill3
                                         , effectHitNomal, effectHitSkill1, effectHitSkill2, effectHitSkill3;
 
     [HideInInspector] public bool NotMove;
@@ -131,8 +131,12 @@ public class EnemyControoller : MonoBehaviour
     {
         if (activateButton)
         {
+            if (Time.time - lastClickedTime > maxComboDelay)
+            {
+                noOfClick = 0;
+            }
+
             NotMove = true;
-            attacking = true;
 
             lastClickedTime = Time.time;
             noOfClick++;
@@ -141,13 +145,14 @@ public class EnemyControoller : MonoBehaviour
                 ChangeAnimationState(_AnimationState.Attack1);
             }
 
-            noOfClick = Mathf.Clamp(noOfClick, 0, 5);
+            noOfClick = Mathf.Clamp(noOfClick, 0, 4);
         }
     }
     public void Return1()
     {
         if (noOfClick >= 2)
         {
+            attacking = true;
             ChangeAnimationState(_AnimationState.Attack2);
         }
         else
@@ -172,23 +177,9 @@ public class EnemyControoller : MonoBehaviour
             attacking = false;
         }
     }
-    public void Return3()
-    {
-        if (noOfClick >= 4)
-        {
-            ChangeAnimationState(_AnimationState.Attack4);
-        }
-        else
-        {
-            ChangeAnimationState(_AnimationState.Idle1);
-            noOfClick = 0;
-            NotMove = false;
-            attacking = false;
-        }
-    }
     public void Return4()
     {
-        if (noOfClick >= 5)
+        if (noOfClick >= 4)
         {
             ChangeAnimationState(_AnimationState.Attack5);
         }
@@ -202,10 +193,27 @@ public class EnemyControoller : MonoBehaviour
     }
     public void Return5()
     {
-        ChangeAnimationState(_AnimationState.Idle1);
+        var player = Player.instance;
+        if (player.noOfHit >= 4)
+        {
+            Invoke(nameof(DelayIdle), 0.7f);
+            attacking = false;
+            rb.velocity = Vector3.zero;
+
+            player.BlownAway(0.8f);
+        }
+        else
+        {
+            DelayIdle();
+        }
+    }
+    public void DelayIdle()
+    {
+        attacking = false;
+        rb.velocity = Vector3.zero;
         noOfClick = 0;
         NotMove = false;
-        attacking = false;
+        ChangeAnimationState(_AnimationState.Idle1);
     }
     public void BtDefenseDown()
     {
@@ -270,6 +278,22 @@ public class EnemyControoller : MonoBehaviour
     }
     public void BtSuperSpeed()
     {
+        //if (activateButton)
+        //{
+        //    superFast = true;
+        //    if (!NotMove)
+        //    {
+        //        NotMove = true;
+        //    }
+        //    if (attacking)
+        //    {
+        //        attacking = false;
+        //    }
+        //    Vector3 directionSuperSpeed = (playerFocus.position - _transform.position).normalized;
+        //    rb.velocity = directionSuperSpeed * superSpeed;
+        //    CreateEffectSuperSpeed();
+        //    Invoke(nameof(EndSuperSpeed), 0.15f);
+        //}
         if (activateButton)
         {
             superFast = true;
@@ -281,32 +305,40 @@ public class EnemyControoller : MonoBehaviour
             {
                 attacking = false;
             }
+
+            ChangeAnimationState(_AnimationState.MoveFont);
+
             Vector3 directionSuperSpeed = (playerFocus.position - _transform.position).normalized;
-            rb.velocity = directionSuperSpeed * superSpeed;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.AddForce(directionSuperSpeed * superSpeed, ForceMode2D.Impulse);
+
             CreateEffectSuperSpeed();
-            Invoke(nameof(EndSuperSpeed), 0.15f);
+            Invoke(nameof(EndSuperSpeed), 0.2f);
         }
     }
     private void EndSuperSpeed()
     {
+        Destroy(tam);
+        rb.bodyType = RigidbodyType2D.Kinematic;
+
         if (NotMove)
         {
             rb.velocity = Vector3.zero;
             NotMove = false;
-            superFast = false;
+            ChangeAnimationState(_AnimationState.Idle1);
         }
     }
     public void SuperSpeedPlus_H()
     {
         superFast = false;
         Vector2 Vt = new Vector2(-rb.velocity.x, rb.velocity.y).normalized;
-        rb.velocity = Vt * superSpeed / 1.5f;
+        rb.velocity = Vt * superSpeed;
     }
     public void SuperSpeedPlus_V()
     {
         superFast = false;
         Vector2 Vt = new Vector2(rb.velocity.x, -rb.velocity.y).normalized;
-        rb.velocity = Vt * superSpeed / 1.5f;
+        rb.velocity = Vt * superSpeed;
     }
     public void BtTranform()
     {
@@ -508,8 +540,16 @@ public class EnemyControoller : MonoBehaviour
     }
     public void CreateEffectSkill2()
     {
-        GameObject skill2 = Instantiate(effectSkill2, firePoint.position, _transform.rotation);
-        skill2.GetComponent<Skill2Controller>().OnColllier(true);
+        if (_transform.localScale.x > 0)
+        {
+            GameObject skill2 = Instantiate(effectSkill2, firePoint.position, _transform.rotation);
+            skill2.GetComponent<Skill2Controller>().OnColllier(false);
+        }
+        else
+        {
+            GameObject skill2 = Instantiate(_effectSkill2, firePoint.position, _transform.rotation);
+            skill2.GetComponent<Skill2Controller>().OnColllier(false);
+        }
     }
     private void CreateEffectSkill3()
     {

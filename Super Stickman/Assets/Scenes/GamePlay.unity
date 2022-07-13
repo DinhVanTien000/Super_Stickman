@@ -1925,6 +1925,7 @@ GameObject:
   - component: {fileID: 1510082198}
   - component: {fileID: 1510082197}
   - component: {fileID: 1510082196}
+  - component: {fileID: 1510082201}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: enemy
@@ -1970,6 +1971,7 @@ MonoBehaviour:
     type: 3}
   effectSkill2: {fileID: -6333234500413929468, guid: 0790809808574a75bca79d3c1347d376,
     type: 3}
+  _effectSkill2: {fileID: 0}
   effectSkill3: {fileID: -4476350642040517142, guid: b0e21f1c529c9dd47a1ca127407c720e,
     type: 3}
   effectHitNomal: {fileID: -8482199898186140781, guid: f0d531cda87f4ad681e1c76c77c644ea,
@@ -2088,6 +2090,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37042487, y: 1.1701808}
   m_EdgeRadius: 0
+--- !u!114 &1510082201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510082195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 0}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: 
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
 --- !u!50 &1510082203
 Rigidbody2D:
   serializedVersion: 4
