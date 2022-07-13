@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 81f18db4af0838047a5b637157afe59b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1928646682974561986
+    second: skill02_charge_0
+  - first:
+      213: -6164648579663781886
+    second: skill02_charge_1
+  - first:
+      213: -3551354608370515990
+    second: skill02_charge_2
+  - first:
+      213: -8324193547301021017
+    second: skill02_charge_3
+  - first:
+      213: -8294446468969279552
+    second: skill02_charge_4
+  - first:
+      213: -4617468246340926926
+    second: skill02_charge_5
+  - first:
+      213: 7990370708194247698
+    second: skill02_charge_6
+  - first:
+      213: 4804046389877265944
+    second: skill02_charge_7
+  - first:
+      213: -6331952224905085470
+    second: skill02_charge_8
+  - first:
+      213: 8620089044580771567
+    second: skill02_charge_9
+  - first:
+      213: -568317268912720503
+    second: skill02_charge_10
+  - first:
+      213: -3703638205544091247
+    second: skill02_charge_11
+  - first:
+      213: -2050644208753523054
+    second: skill02_charge_12
+  - first:
+      213: -8133707934337468116
+    second: skill02_charge_13
+  - first:
+      213: 3821372505495473590
+    second: skill02_charge_14
+  - first:
+      213: 258312503607764598
+    second: skill02_charge_15
+  - first:
+      213: 2418554342394602477
+    second: skill02_charge_16
+  - first:
+      213: -7101856747819633241
+    second: skill02_charge_17
+  - first:
+      213: 6373951716343976769
+    second: skill02_charge_18
+  - first:
+      213: 6778007588985856405
+    second: skill02_charge_19
+  - first:
+      213: 8044302817952072471
+    second: skill02_charge_20
+  - first:
+      213: 2726359341254358908
+    second: skill02_charge_21
+  - first:
+      213: -6123727929215857500
+    second: skill02_charge_22
+  - first:
+      213: -5373033012476128495
+    second: skill02_charge_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skill02_charge_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 360
+        width: 38
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c62fe390fde3ca10800000000000000
+      internalID: 1928646682974561986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 360
+        width: 43
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200260c47c4c27aa0800000000000000
+      internalID: -6164648579663781886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 361
+        width: 48
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeff0a0bccd07bec0800000000000000
+      internalID: -3551354608370515990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 361
+        width: 51
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa168b72168a7c80800000000000000
+      internalID: -8324193547301021017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 362
+        width: 50
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfc790e1e434ec80800000000000000
+      internalID: -8294446468969279552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_5
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 362
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232043728157befb0800000000000000
+      internalID: -4617468246340926926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 243
+        width: 51
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214ca9503df73ee60800000000000000
+      internalID: 7990370708194247698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 243
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816d1291db66ba240800000000000000
+      internalID: 4804046389877265944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 243
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edb9c3eff26028a0800000000000000
+      internalID: -6331952224905085470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_9
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 242
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6297a9055b0a770800000000000000
+      internalID: 8620089044580771567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_10
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 242
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985bcba747eec18f0800000000000000
+      internalID: -568317268912720503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_11
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 243
+        width: 51
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191bafdbca80a9cc0800000000000000
+      internalID: -3703638205544091247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 123
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296c888f4f5aa83e0800000000000000
+      internalID: -2050644208753523054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 123
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29f90b5ab34f1f80800000000000000
+      internalID: -8133707934337468116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_14
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 123
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd80881c0e380530800000000000000
+      internalID: 3821372505495473590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_15
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 123
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676259a7ad5b59300800000000000000
+      internalID: 258312503607764598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_16
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 123
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3a8604c5e609120800000000000000
+      internalID: 2418554342394602477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_17
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 123
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5ff744ae2217d90800000000000000
+      internalID: -7101856747819633241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1439c2cb053d47850800000000000000
+      internalID: 6373951716343976769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5916762adf1501e50800000000000000
+      internalID: 6778007588985856405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_20
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 3
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71305b9daca13af60800000000000000
+      internalID: 8044302817952072471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_21
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 3
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77b8814069f5d520800000000000000
+      internalID: 2726359341254358908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_22
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 3
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac43fda4e5240ba0800000000000000
+      internalID: -6123727929215857500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill02_charge_23
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 3
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113d9e451f62f65b0800000000000000
+      internalID: -5373033012476128495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

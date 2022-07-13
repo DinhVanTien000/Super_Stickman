@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - limitH_top
+  - limitH_below
+  - limitV_left
+  - limitV_right
+  - p_hit_normal
+  - e_hit_normal
+  - player
+  - enemy
+  - p_hit_skill1
+  - e_hit_skill1
+  - p_hit_skill2
+  - e_hit_skill2
+  - p_hit_skill3
+  - e_hit_skill3
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Enemy
+  - FocusPlayer
+  - FocusEnemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
