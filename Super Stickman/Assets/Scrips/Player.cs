@@ -545,6 +545,7 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.zero;
             ChangeAnimationState(_AnimationState.Idle1);
         }
+        NotMove = false;
     }
     public void BounceWall_H()
     {
@@ -565,6 +566,7 @@ public class Player : MonoBehaviour
     }
     public void CreateEffectHitSkill1()
     {
+        NotMove = true;
         Instantiate(effectHitSkill1, _transform.position, _transform.rotation, _transform);
         DelayBlownAway(0.01f, 0.15f);
     }

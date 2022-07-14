@@ -2,7 +2,7 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class EnemyAttack : Action
+public class AttackCondition : Conditional
 {
     private EnemyControoller enemy;
 
@@ -11,14 +11,15 @@ public class EnemyAttack : Action
         base.OnAwake();
         enemy = EnemyControoller.instance;
     }
-    public override void OnStart()
-    {
-        base.OnStart();
-        //enemy.Bta();
-    }
     public override TaskStatus OnUpdate()
     {
-        if (enemy.useSkill) return TaskStatus.Running;
-        return TaskStatus.Success;
+        if(enemy.attacking)
+        {
+            return TaskStatus.Failure;
+        }
+        else
+        {
+            return TaskStatus.Success;
+        }
     }
 }

@@ -75,7 +75,11 @@ public class CollideOfPlayer : MonoBehaviour
             DelayDestroy(collision.gameObject, 0.25f);
             player.CreateEffectHitSkill3();
         }
-        print("tag = " + collision.gameObject.tag);
+        else if(collision.gameObject.CompareTag("enemy"))
+        {
+            player.StopMoveAttack();
+        }
+        //print("tag = " + collision.gameObject.tag);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

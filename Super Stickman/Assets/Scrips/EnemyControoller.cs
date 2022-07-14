@@ -23,7 +23,9 @@ public class EnemyControoller : MonoBehaviour
     [HideInInspector] public bool NotMoveTop, NotMoveBelow, NotMoveRight, NotMoveleft;
     [HideInInspector] public bool superFast;
     [HideInInspector] public bool hitting;
+    [HideInInspector] public bool attacking;
     [HideInInspector] public bool blownAway;
+    [HideInInspector] public bool useSkill;
 
     [SerializeField] private Transform playerFocus;
 
@@ -35,7 +37,6 @@ public class EnemyControoller : MonoBehaviour
     private string currentAnimaton;
 
     private float moveH, moveV;
-    private bool attacking;
     private bool activateButton = true;
     private bool stopActionEndMoveHit;
     private Vector2 moveDirection;
@@ -45,6 +46,11 @@ public class EnemyControoller : MonoBehaviour
     public float maxComboDelay = 0.9f;
     public float maxComboHitDelay = 0.9f;
 
+
+    private void Start()
+    {
+        ChangeAnimationState(_AnimationState.Idle1);
+    }
     private void Awake()
     {
         instance = this;
@@ -57,11 +63,8 @@ public class EnemyControoller : MonoBehaviour
         scaleY = _transform.localScale.y;
         firePoint = _transform.GetChild(0).transform;
     }
-
     private void FixedUpdate()
     {
-        
-
         RotationEnemy();
         //MovePlayer();
         //MovePlayerWhenAttack();
@@ -127,41 +130,15 @@ public class EnemyControoller : MonoBehaviour
     {
         _transform.localScale = new Vector2(scaleX, -y);
     }
-    public void BtFightNormal()
+    public void FightNormal()
     {
-        if (activateButton)
-        {
-            if (Time.time - lastClickedTime > maxComboDelay)
-            {
-                noOfClick = 0;
-            }
-
-            NotMove = true;
-
-            lastClickedTime = Time.time;
-            noOfClick++;
-            if (noOfClick == 1)
-            {
-                ChangeAnimationState(_AnimationState.Attack1);
-            }
-
-            noOfClick = Mathf.Clamp(noOfClick, 0, 4);
-        }
+        NotMove = true;
+        ChangeAnimationState(_AnimationState.Attack1);
     }
     public void Return1()
     {
-        if (noOfClick >= 2)
-        {
-            attacking = true;
-            ChangeAnimationState(_AnimationState.Attack2);
-        }
-        else
-        {
-            ChangeAnimationState(_AnimationState.Idle1);
-            noOfClick = 0;
-            NotMove = false;
-            attacking = false;
-        }
+        attacking = true;
+        ChangeAnimationState(_AnimationState.Attack2);
     }
     public void Return2()
     {
@@ -233,11 +210,13 @@ public class EnemyControoller : MonoBehaviour
         if (activateButton)
         {
             NotMove = true;
+            //useSkill = true;
             ChangeAnimationState(_AnimationState.Skill1);
         }
     }
     public void ReturnSkill1()
     {
+        //useSkill = false;
         NotMove = false;
         ChangeAnimationState(_AnimationState.Idle1);
     }
@@ -246,9 +225,9 @@ public class EnemyControoller : MonoBehaviour
         if (activateButton)
         {
             NotMove = true;
+            useSkill = true;
             ChangeAnimationState(_AnimationState.Skill2_start);
         }
-        //tao ra kamejoko
     }
     public void EndSkill2()
     {
@@ -256,6 +235,7 @@ public class EnemyControoller : MonoBehaviour
     }
     public void ReturnSkill2()
     {
+        useSkill = false;
         NotMove = false;
         ChangeAnimationState(_AnimationState.Idle1);
     }

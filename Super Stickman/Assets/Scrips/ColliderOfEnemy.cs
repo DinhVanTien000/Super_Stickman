@@ -63,7 +63,7 @@ public class ColliderOfEnemy : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("player"))
         {
-            Player.instance.StopMoveAttack();
+
         }
         else if(collision.gameObject.CompareTag("p_hit_skill1"))
         {
@@ -79,7 +79,7 @@ public class ColliderOfEnemy : MonoBehaviour
             DelayDestroy(collision.gameObject, 0.25f);
             enemy.CreateEffectHitSkill3();
         }
-        print("tag = " + collision.gameObject.tag);
+        //print("tag = " + collision.gameObject.tag);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
