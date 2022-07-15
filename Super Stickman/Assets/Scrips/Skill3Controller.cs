@@ -18,6 +18,6 @@ public class Skill3Controller : MonoBehaviour
         direction = (target.position - transform.position).normalized;
         rb.AddForce(direction * force, ForceMode2D.Impulse);
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
     }
 }

@@ -15,7 +15,7 @@ public class ColliderOfEnemy : MonoBehaviour
             {
                 enemy.SuperSpeedPlus_V();
             }
-            if(enemy.blownAway)
+            if (enemy.blownAway)
             {
                 enemy.BounceWall_V();
             }
@@ -61,13 +61,17 @@ public class ColliderOfEnemy : MonoBehaviour
             enemy.ActionHit1();
             enemy.CreateEffectHitNomal();
         }
-        else if(collision.gameObject.CompareTag("player"))
+        else if (collision.gameObject.CompareTag("player"))
         {
-
+            enemy.touchPlayer = true;
+            if (enemy.moving)
+            {
+                enemy.SetMove();
+            }
         }
         else if(collision.gameObject.CompareTag("p_hit_skill1"))
         {
-            DelayDestroy(collision.gameObject, 0.1f);
+            Destroy(collision.gameObject);
             enemy.CreateEffectHitSkill1();
         }
         else if (collision.gameObject.CompareTag("p_hit_skill2"))
@@ -103,6 +107,7 @@ public class ColliderOfEnemy : MonoBehaviour
         else if (collision.gameObject.CompareTag("player"))
         {
             Player.instance.touchEnemy = false;
+            enemy.touchPlayer = false;
         }
     }
 

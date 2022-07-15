@@ -63,7 +63,7 @@ public class CollideOfPlayer : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("e_hit_skill1"))
         {
-            DelayDestroy(collision.gameObject, 0.1f);
+            Destroy(collision.gameObject);
             player.CreateEffectHitSkill1();
         }
         else if (collision.gameObject.CompareTag("e_hit_skill2"))

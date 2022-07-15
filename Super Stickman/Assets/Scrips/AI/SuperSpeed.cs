@@ -2,7 +2,7 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class EnemyAttack : Action
+public class SuperSpeed : Action
 {
     private EnemyControoller enemy;
 
@@ -14,11 +14,11 @@ public class EnemyAttack : Action
     public override void OnStart()
     {
         base.OnStart();
-        enemy.FightNormal();
+        enemy.SuperSpeed();
     }
     public override TaskStatus OnUpdate()
     {
-        if (enemy.attacking) return TaskStatus.Running;
+        if (enemy.useSkill) return TaskStatus.Running;
         return TaskStatus.Success;
     }
 }

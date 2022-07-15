@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackCondition : Conditional
 {
     private EnemyControoller enemy;
+    public bool downstream;
 
     public override void OnAwake()
     {
@@ -13,13 +14,27 @@ public class AttackCondition : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-        if(enemy.attacking)
+        if(!downstream)
         {
-            return TaskStatus.Failure;
+            if (enemy.touchPlayer)
+            {
+                return TaskStatus.Failure;
+            }
+            else
+            {
+                return TaskStatus.Success;
+            }
         }
         else
         {
-            return TaskStatus.Success;
+            if (enemy.touchPlayer)
+            {
+                return TaskStatus.Success;
+            }
+            else
+            {
+                return TaskStatus.Failure;
+            }
         }
     }
 }

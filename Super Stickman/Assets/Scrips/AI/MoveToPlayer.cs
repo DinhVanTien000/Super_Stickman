@@ -2,7 +2,7 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class EnemyAttack : Action
+public class MoveToPlayer : Action
 {
     private EnemyControoller enemy;
 
@@ -14,11 +14,11 @@ public class EnemyAttack : Action
     public override void OnStart()
     {
         base.OnStart();
-        enemy.FightNormal();
+        enemy.MoveToPlayer();
     }
     public override TaskStatus OnUpdate()
     {
-        if (enemy.attacking) return TaskStatus.Running;
-        return TaskStatus.Success;
+        if (enemy.touchPlayer || enemy.hitting == false) return TaskStatus.Success;
+        return TaskStatus.Running;
     }
 }

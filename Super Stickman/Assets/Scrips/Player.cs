@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private float moveH, moveV;
     public bool attacking;
     private bool hitting;
-    private bool activateButton = true;
+    [SerializeField] private bool activateButton = true;
     private Vector2 moveDirection;
 
     public int noOfClick = 0, noOfHit = 0;
@@ -65,9 +65,9 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        RotationPlayer();
         MovePlayer();
         MovePlayerWhenAttack();
+        RotationPlayer();
         UpdateAnimation();
     }
     private void MovePlayer()
@@ -76,6 +76,33 @@ public class Player : MonoBehaviour
         {
             moveH = joystick.Horizontal;
             moveV = joystick.Vertical;
+
+            //if(Input.GetKey(KeyCode.A))
+            //{
+            //    moveH = -1;
+            //}
+            //else if (Input.GetKey(KeyCode.D))
+            //{
+            //    moveH = 1;
+            //}
+            //else
+            //{
+            //    moveH = 0;
+            //}
+
+            //if (Input.GetKey(KeyCode.W))
+            //{
+            //    moveV = 1;
+            //}
+            //else if (Input.GetKey(KeyCode.S))
+            //{
+            //    moveV = -1;
+            //}
+            //else
+            //{
+            //    moveV = 0;
+            //}
+
 
             if (NotMoveTop && moveV > 0)
             {
@@ -165,7 +192,7 @@ public class Player : MonoBehaviour
                 noOfClick = 0;
             }
 
-            NotMove = true;
+            SetNotMove();
 
             lastClickedTime = Time.time;
             noOfClick++;
@@ -262,7 +289,7 @@ public class Player : MonoBehaviour
     {
         if (activateButton)
         {
-            NotMove = true;
+            SetNotMove();
             ChangeAnimationState(_AnimationState.Defense);
         }
     }
@@ -275,7 +302,7 @@ public class Player : MonoBehaviour
     {
         if (activateButton)
         {
-            NotMove = true;
+            SetNotMove();
             ChangeAnimationState(_AnimationState.Skill1);
         }
     }
@@ -288,10 +315,11 @@ public class Player : MonoBehaviour
     {
         if (activateButton)
         {
-            NotMove = true;
+            activateButton = false;
+            EnemyControoller.instance.LockPlayer();
+            SetNotMove();
             ChangeAnimationState(_AnimationState.Skill2_start);
         }
-        //tao ra kamejoko
     }
     public void EndSkill2()
     {
@@ -299,6 +327,7 @@ public class Player : MonoBehaviour
     }
     public void ReturnSkill2()
     {
+        activateButton = true;
         NotMove = false;
         ChangeAnimationState(_AnimationState.Idle1);
     }
@@ -306,7 +335,9 @@ public class Player : MonoBehaviour
     {
         if (activateButton)
         {
-            NotMove = true;
+            activateButton = false;
+            EnemyControoller.instance.LockPlayer();
+            SetNotMove();
             ChangeAnimationState(_AnimationState.Skill3_start);
         }
     }
@@ -316,6 +347,7 @@ public class Player : MonoBehaviour
     }
     public void ReturnSkill3()
     {
+        activateButton = true;
         NotMove = false;
         ChangeAnimationState(_AnimationState.Idle1);
     }
@@ -326,7 +358,7 @@ public class Player : MonoBehaviour
             superFast = true;
             if (!NotMove)
             {
-                NotMove = true;
+                SetNotMove();
             }
             if (attacking)
             {
@@ -371,7 +403,7 @@ public class Player : MonoBehaviour
     {
         if (activateButton)
         {
-            NotMove = true;
+            SetNotMove();
             ChangeAnimationState(_AnimationState.Tranform);
         } 
     }
@@ -387,7 +419,7 @@ public class Player : MonoBehaviour
     {
         if (activateButton)
         {
-            NotMove = true;
+            SetNotMove();
             ChangeAnimationState(_AnimationState.Buff);
         }
     }
@@ -398,6 +430,8 @@ public class Player : MonoBehaviour
     }
     public void ActionHit1()
     {
+        SetNotMove();
+
         if (Time.time - lastHitTime > maxComboHitDelay)
         {
             noOfHit = 0;
@@ -425,6 +459,7 @@ public class Player : MonoBehaviour
             ChangeAnimationState(_AnimationState.Idle1);
             noOfHit = 0;
             hitting = false;
+            NotMove = false;
         }
     }
     public void ReturnHit2()
@@ -438,6 +473,7 @@ public class Player : MonoBehaviour
             ChangeAnimationState(_AnimationState.Idle1);
             noOfHit = 0;
             hitting = false;
+            NotMove = false;
         }
     }
     public void ReturnHit3()
@@ -451,11 +487,13 @@ public class Player : MonoBehaviour
             ChangeAnimationState(_AnimationState.Idle1);
             noOfHit = 0;
             hitting = false;
+            NotMove = false;
         }
     }
     public void ReturnHit4()
     {
         noOfHit = 0;
+        NotMove = false;
         if (!blownAway)
         {
             ChangeAnimationState(_AnimationState.Idle1);
@@ -464,8 +502,8 @@ public class Player : MonoBehaviour
     public void Fall()
     {
         activateButton = false;
-        NotMove = true;
-        if(attacking)
+        SetNotMove();
+        if (attacking)
         {
             attacking = false;
         }
@@ -474,7 +512,7 @@ public class Player : MonoBehaviour
     }
     public void ActionWin()
     {
-        NotMove = true;
+        SetNotMove();
         attacking = false;
         activateButton = false;
         ChangeAnimationState(_AnimationState.Win);
@@ -503,7 +541,7 @@ public class Player : MonoBehaviour
     }
     private void CreateEffectSkill3()
     {
-        tam =  Instantiate(effectSkill3, firePoint.position, _transform.rotation);
+        tam = Instantiate(effectSkill3, firePoint.position, _transform.rotation);
     }
     public void MoveSkill3()
     {
@@ -521,6 +559,7 @@ public class Player : MonoBehaviour
     }
     public void BlownAway(float timeEnd)
     {
+        SetNotMove();
         blownAway = true;
         Invoke(nameof(EndBlowAway), timeEnd);
         if (NotMoveTop || NotMoveBelow || NotMoveleft || NotMoveRight)
@@ -545,7 +584,9 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.zero;
             ChangeAnimationState(_AnimationState.Idle1);
         }
+        noOfHit = 0;
         NotMove = false;
+        UnlockPlayer();
     }
     public void BounceWall_H()
     {
@@ -566,7 +607,7 @@ public class Player : MonoBehaviour
     }
     public void CreateEffectHitSkill1()
     {
-        NotMove = true;
+        SetNotMove();
         Instantiate(effectHitSkill1, _transform.position, _transform.rotation, _transform);
         DelayBlownAway(0.01f, 0.15f);
     }
@@ -585,6 +626,29 @@ public class Player : MonoBehaviour
 
         Instantiate(effectHitSkill3, _transform.position, _transform.rotation, _transform);
         DelayBlownAway(0.3f, 0.8f);
+    }
+    public void LockPlayer()
+    {
+        SetNotMove();
+        activateButton = false;
+        rb.velocity = Vector3.zero;
+    }
+    public void UnlockPlayer()
+    {
+        if(NotMove)
+        {
+            NotMove = false;
+        }
+        if(!activateButton)
+        {
+            activateButton = true;
+        }
+    }
+    public void SetNotMove()
+    {
+        moveH = moveV = 0;
+        NotMove = true;
+        rb.velocity = Vector3.zero;
     }
     void ChangeAnimationState(string newAnimation)
     {
